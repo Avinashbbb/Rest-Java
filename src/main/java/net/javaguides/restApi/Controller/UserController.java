@@ -20,10 +20,10 @@ public class UserController {
     public UserController(UserServices userServices){
         this.userServices = userServices;
     }
-//    @GetMapping(value = "/allusers")
-//    public List<User> getAllUsers(){
-//        return userServices.getAllUser();
-//    }
+    @GetMapping(value = "/allusers")
+    public List<User> getAllUsers(){
+        return userServices.getAllUser();
+    }
 
 
 }
