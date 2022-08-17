@@ -23,8 +23,8 @@ public class Battery {
     private String Types;
     @Column(name = "status")
     private String Status;
-    @Column(name = "EmployeeId")
-    private int EmployeeId;
+//    @Column(name = "EmployeeId")
+//    private int EmployeeId;
     @Column(name = "certificate_of_operations")
     private String CertificateOfOperations;
     @Column(name = "information")

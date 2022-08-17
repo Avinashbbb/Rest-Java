@@ -13,21 +13,21 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/building")
-public class BuildingController {
-    BuildingServices buildingServices;
-    @Autowired
-    public BuildingController(BuildingServices buildingServices){ this.buildingServices = buildingServices;}
+    public class BuildingController {
+        BuildingServices buildingServices;
+        @Autowired
+        public BuildingController(BuildingServices buildingServices){ this.buildingServices = buildingServices;}
 
-    @GetMapping(value = "/allbuilding")
-    public List<Building> getAllBuilding(){
-        return buildingServices.getAllBuilding();
-    }
+        @GetMapping(value = "/allbuilding")
+        public List<Building> getAllBuilding(){
+            return buildingServices.getAllBuilding();
+        }
 
-    @GetMapping(value = "/{id}")
-    public Optional<Building> findUserById(@PathVariable("id")int id) {
-        Optional<Building> bul = buildingServices.findById(id);
-        return bul;
-    }
+        @GetMapping(value = "/{id}")
+        public Optional<Building> findUserById(@PathVariable("id")int id) {
+            Optional<Building> bul = buildingServices.findById(id);
+            return bul;
+        }
 
 
 }

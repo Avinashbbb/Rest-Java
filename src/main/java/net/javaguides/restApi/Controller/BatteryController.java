@@ -18,7 +18,7 @@ import java.util.Optional;
         @Autowired
         public BatteryController(BatteryServices batteryServices){ this.batteryServices = batteryServices;}
 
-        @GetMapping(value = "/allbattery")
+        @GetMapping(value = "/allbatterys")
         public List<Battery> getAllBattery(){
             return batteryServices.getAllBattery();
         }
