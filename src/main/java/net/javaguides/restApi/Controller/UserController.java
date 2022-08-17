@@ -16,14 +16,14 @@ public class UserController {
 
 
     UserServices userServices;
-    @Autowired
+//    @Autowired
     public UserController(UserServices userServices){
         this.userServices = userServices;
     }
-    @GetMapping(value = "/allusers")
-    public List<User> getAllUsers(){
-        return userServices.getAllUser();
-    }
+//    @GetMapping(value = "/allusers")
+//    public List<User> getAllUsers(){
+//        return userServices.getAllUser();
+//    }
 
 
 }

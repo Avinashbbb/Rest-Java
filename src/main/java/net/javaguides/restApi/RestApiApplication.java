@@ -17,7 +17,7 @@ import java.util.Optional;
 @EntityScan("net.javaguides.restApi")
 @Configuration
 @EnableJpaRepositories("net.javaguides.restApi.repositories")
-public
+
 
 
 
