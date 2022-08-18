@@ -1,13 +1,16 @@
 package net.javaguides.restApi.services;
 
+import lombok.Getter;
 import net.javaguides.restApi.models.Colum;
 import net.javaguides.restApi.models.Customer;
+import net.javaguides.restApi.models.Intervention;
 import net.javaguides.restApi.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 
 @Service
     public class CustomerServices {
@@ -17,7 +20,10 @@ import java.util.Optional;
         public List<Customer> getAllCustomer(){
         return customerRepository.findAll();
     }
+
         public Optional<Customer> findById(int id) {
         return customerRepository.findById(id);
     }
+        public Customer save(Customer cus) { return customerRepository.save(cus);}
+
     }

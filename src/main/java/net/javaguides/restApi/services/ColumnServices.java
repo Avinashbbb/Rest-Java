@@ -1,5 +1,6 @@
 package net.javaguides.restApi.services;
 
+import lombok.Getter;
 import net.javaguides.restApi.models.Colum;
 import net.javaguides.restApi.repository.ColumnRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Getter
 @Service
 public class ColumnServices {
     ColumnRepository columnRepository;

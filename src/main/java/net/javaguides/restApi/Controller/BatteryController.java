@@ -1,6 +1,7 @@
 package net.javaguides.restApi.Controller;
 
 import net.javaguides.restApi.models.Battery;
+import net.javaguides.restApi.models.Colum;
 import net.javaguides.restApi.services.BatteryServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,5 +28,11 @@ import java.util.Optional;
         public Optional<Battery> findUserById(@PathVariable("id")int id) {
             Optional<Battery> bat = batteryServices.findById(id);
             return bat;
+        }
+
+        @GetMapping(value = "/batterycolumn/{id}")
+        public List<Colum> findColumnbyBattery(@PathVariable("id")int id){
+            Optional<Battery> bat = batteryServices.findById(id);
+            return bat.get().getColums();
         }
     }

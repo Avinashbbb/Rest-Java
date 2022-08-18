@@ -1,5 +1,6 @@
 package net.javaguides.restApi.Controller;
 
+import net.javaguides.restApi.models.Battery;
 import net.javaguides.restApi.models.Building;
 import net.javaguides.restApi.services.BuildingServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,12 @@ import java.util.Optional;
         public Optional<Building> findUserById(@PathVariable("id")int id) {
             Optional<Building> bul = buildingServices.findById(id);
             return bul;
+        }
+
+        @GetMapping(value = "/buildingbattery/{id}")
+        public List<Battery> findbuildingBybuilding(@PathVariable("id")int id) {
+            Optional<Building> bul = buildingServices.findById(id);
+            return bul.get().getBatteries();
         }
 
 

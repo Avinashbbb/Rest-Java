@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Getter
@@ -34,8 +35,11 @@ public class Colum {
     private String Notes;
     @Column(name = "batterie_id")
     private String BatterieId;
-//    [ForeignKey("BatterieId")]
-//    private Battery battery;
+    @OneToMany(targetEntity = Elevator.class,cascade = CascadeType.ALL)
+    @JoinColumn(name= "column_id",referencedColumnName = "Id")
+    private List <Elevator> elevators;
+
+
 
 
 }

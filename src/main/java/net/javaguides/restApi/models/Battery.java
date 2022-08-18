@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,8 +24,6 @@ public class Battery {
     private String Types;
     @Column(name = "status")
     private String Status;
-//    @Column(name = "EmployeeId")
-//    private int EmployeeId;
     @Column(name = "certificate_of_operations")
     private String CertificateOfOperations;
     @Column(name = "information")
@@ -33,7 +32,7 @@ public class Battery {
     private String Notes;
     @Column(name = "building_id")
     private String BuildingId;
-//    private Building Building;
-
-
+    @OneToMany(targetEntity = Colum.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "batterie_id",referencedColumnName = "Id")
+    private List<Colum> colums;
 }

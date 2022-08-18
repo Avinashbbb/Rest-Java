@@ -6,10 +6,8 @@ import net.javaguides.restApi.models.Colum;
 import net.javaguides.restApi.models.Customer;
 import net.javaguides.restApi.services.CustomerServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,4 +30,9 @@ import java.util.Optional;
                 Optional<Customer> cus = customerServices.findById(id);
                 return cus;
             }
+
+        @PostMapping(value="/post")
+        public Customer addCustomer(@Validated @RequestBody Customer cus){
+            return customerServices.save(cus);
+        }
     }

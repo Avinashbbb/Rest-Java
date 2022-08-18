@@ -1,6 +1,7 @@
 package net.javaguides.restApi.Controller;
 
 import net.javaguides.restApi.models.Colum;
+import net.javaguides.restApi.models.Elevator;
 import net.javaguides.restApi.services.ColumnServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,4 +31,11 @@ public class ColumnController {
         Optional<Colum> col = columnServices.findById(id);
         return col;
     }
+
+    @GetMapping(value = "/columnelevator/{id}")
+    public List<Elevator> findElevatorbyColumn(@PathVariable("id")int id){
+        Optional<Colum> col = columnServices.findById(id);
+        return col.get().getElevators();
+    }
+
 }

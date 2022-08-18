@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,6 +30,7 @@ public class Building {
     private String FullNameTechnicalAuthority;
     @Column(name = "email_technical_authority")
     private String EmailTechnicalAuthority;
-    @Column(name = "customer_id")
-    private int CustomerId;
+    @OneToMany(targetEntity = Battery.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "building_id", referencedColumnName = "Id")
+    private List<Battery> batteries;
 }
