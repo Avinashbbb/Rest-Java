@@ -33,4 +33,5 @@ public class Building {
     @OneToMany(targetEntity = Battery.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "building_id", referencedColumnName = "Id")
     private List<Battery> batteries;
+
 }

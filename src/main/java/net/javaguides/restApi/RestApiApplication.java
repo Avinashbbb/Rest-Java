@@ -28,10 +28,10 @@ public class RestApiApplication {
 	}
 
 
-	@Bean
-	public Docket productApi() {
-		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("net.javaguides.restApi")).build();
-	}
+//	@Bean
+//	public Docket productApi() {
+//		return new Docket(DocumentationType.SWAGGER_2).select()
+//				.apis(RequestHandlerSelectors.basePackage("net.javaguides.restApi")).build();
+//	}
 
 }
